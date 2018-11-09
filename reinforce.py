@@ -69,7 +69,7 @@ def return_summary_index(probs_numpy, probs_torch, sample_method="greedy", max_n
                 summary_index = torch.cat(summary_index, dim=0)
                 summary_index = summary_index.data.cpu().numpy()
 
-            loss = sum(loss_list)
+                loss = sum(loss_list)
         elif sample_method == "greedy":
             loss = 0
             summary_index = np.argsort(np.reshape(probs_numpy, len(probs_numpy)))[-max_num_of_sents:]
