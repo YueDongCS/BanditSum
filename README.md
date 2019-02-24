@@ -20,6 +20,8 @@ https://github.com/JafferWilson/Process-Data-of-CNN-DailyMail
 Test data: https://drive.google.com/file/d/1PCl0VVfhlcEaz-eSc5alP_U8uaVQGc_P/view?usp=sharing
 
  Pre-trained model: https://drive.google.com/file/d/1E9hIB8QcJOSzfGIyGYSxgLM6-WtzDZqE/view?usp=sharing
+ 
+For our system outputs, you need to run our pre-trained model on the test data. We will update this readme in a few days to include our system's output. 
 
 ### Installation
 Our code requires PyTorch version >= 0.4.0. Please follow the instructions here: https://github.com/pytorch/pytorch#installation.
