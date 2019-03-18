@@ -19,7 +19,7 @@ https://github.com/JafferWilson/Process-Data-of-CNN-DailyMail
 ## Our Test Output:
 https://drive.google.com/file/d/1tMiWuRzvDfHGwDILDXT2WFpyFcuHSK1n/view?usp=sharing
 
-## Our pre-trained model:
+## Our Pre-trained Model:
 Test data: https://drive.google.com/file/d/1PCl0VVfhlcEaz-eSc5alP_U8uaVQGc_P/view?usp=sharing
 Pre-trained model: https://drive.google.com/file/d/13UB2GH_TT5SPQaYydnxYXYHClD4pbOIn/view?usp=sharing
 
