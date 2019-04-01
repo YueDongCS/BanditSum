@@ -36,7 +36,7 @@ human_eval_set = [
 def hashhex(s):
     """Returns a heximal formated SHA1 hash of the input string."""
     h = hashlib.sha1()
-    h.update(s)
+    h.update(s.encode('utf-8'))
     return h.hexdigest()
 
 
