@@ -33,6 +33,7 @@ def RougeTest_rouge(ref, hyp, rouge_metric="all", max_num_of_bytes=-1):
 
 home_path = os.path.expanduser('~')
 
+
 def RougeTest_pyrouge(ref, hyp, id=0, rouge_metric='all', compute_score=True,
                       path='./result', max_num_of_bytes=-1):
     # initialization

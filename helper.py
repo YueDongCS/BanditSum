@@ -1,17 +1,13 @@
 # coding:utf8
-import cPickle as pkl
-import logging
+
 import random
 from collections import namedtuple
 from copy import deepcopy
 
 import numpy
-import torch
-from torch.autograd import Variable
 
 random.seed(1234)
 
-# os.chdir('/home/ml/ydong26/Dropbox/summarization_RL/summarization_RL/src/')
 Config = namedtuple('parameters',
                     ['vocab_size', 'embedding_dim',
                      'position_size', 'position_dim',
@@ -21,7 +17,7 @@ Config = namedtuple('parameters',
                      'dropout'])
 
 
-class Document():
+class Document:
     def __init__(self, content, label, summary):
         self.content = content
         self.label = label

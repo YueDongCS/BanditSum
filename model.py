@@ -7,6 +7,7 @@ from torch.nn import Parameter
 
 torch.manual_seed(233)
 
+
 class SimpleRNN(nn.Module):
     def __init__(self, config):
         super(SimpleRNN, self).__init__()
@@ -84,14 +85,13 @@ class SimpleRNN(nn.Module):
 
         if self.sent_rep:
             doc_features = enc_output.mean(dim=1, keepdim=True).expand(enc_output.size())
-            enc_output = torch.cat([enc_output ,doc_features], dim=-1)
+            enc_output = torch.cat([enc_output, doc_features], dim=-1)
 
         prob = self.decoder(enc_output)
 
         return prob.view(sequence_num, 1)
-    
-    
-    
+
+
 class SimpleRuNNer(nn.Module):
     def __init__(self, config):
         super(SimpleRuNNer, self).__init__()
@@ -160,6 +160,3 @@ class SimpleRuNNer(nn.Module):
             outputs.append(Prob)
 
         return torch.cat(outputs, dim=0)
-
-
-

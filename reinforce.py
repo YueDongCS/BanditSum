@@ -8,7 +8,6 @@ from torch.autograd import Variable
 
 from rougefonc import from_summary_index_compute_rouge
 
-
 method = 'herke'
 
 

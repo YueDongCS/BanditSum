@@ -8,7 +8,6 @@ import numpy as np
 
 import dataLoader
 import helper
-import tempfile
 from helper import tokens_to_sentences
 from reinforce import return_summary_index
 from rougefonc import from_summary_index_generate_hyp_ref, RougeTest_pyrouge, RougeTest_rouge
@@ -58,7 +57,7 @@ def ext_model_eval(model, vocab, args, eval_data="test"):
 
     for phase, dataset in enumerate(data_iter):
         for step, docs in enumerate(dataLoader.BatchDataLoader(dataset, shuffle=False)):
-            print("Done %2d chunck, %4d/%4d doc\r" % (phase+1, step + 1, len(dataset)), end='')
+            print("Done %2d chunck, %4d/%4d doc\r" % (phase + 1, step + 1, len(dataset)), end='')
 
             doc = docs[0]
             doc.content = tokens_to_sentences(doc.content)

@@ -2,14 +2,12 @@ import hashlib
 import os
 import pickle, tarfile
 import random
-import re
 
 import numpy as np
 
 PAD_ID = 0
 UNK_ID = 1
 wordembed_size = 200
-
 
 human_eval_set = [
     '00180b7ce54794a52766d795506a94071f7c055b',
@@ -69,13 +67,13 @@ def fix_missing_period(line):
     return line + " ."
 
 
-class Document():
+class Document:
     def __init__(self, content, summary):
         self.content = content
         self.summary = summary
 
 
-class Dataset():
+class Dataset:
     def __init__(self, data_list):
         self._data = data_list
 
@@ -93,7 +91,7 @@ class Dataset():
         return self._data[index]
 
 
-class Vocab():
+class Vocab:
     def __init__(self):
         self.word_list = ['<pad>', '<unk>', '<s>', '<\s>']
         self.w2i = {}
@@ -138,7 +136,7 @@ class Vocab():
         print("%d words out of %d has embeddings in the glove file" % (len(model), len(self.word_list)))
 
 
-class BatchDataLoader():
+class BatchDataLoader:
     def __init__(self, dataset, batch_size=1, shuffle=True):
         assert isinstance(dataset, Dataset)
         assert len(dataset) >= batch_size
@@ -150,7 +148,7 @@ class BatchDataLoader():
         return iter(self.dataset(self.batch_size, self.shuffle))
 
 
-class PickleReader():
+class PickleReader:
     """
     this class intends to read pickle files converted by RawReader
     """
@@ -189,7 +187,7 @@ class PickleReader():
         # chunked_dir = self.base_dir + "chunked/"
         chunked_dir = os.path.join(self.base_dir, 'chunked')
         os_list = os.listdir(chunked_dir)
-        if data_quota == -1: #none-quota randomize data
+        if data_quota == -1:  # none-quota randomize data
             random.seed()
             random.shuffle(os_list)
 
@@ -255,7 +253,7 @@ class PickleReader():
 
         testset = []
         for k in gold_dict.keys():
-        # for k in human_eval_set:
+            # for k in human_eval_set:
             testset.append(Document(news_dict[k], gold_dict[k]))
 
         return [Dataset(testset)]
@@ -298,7 +296,8 @@ def main():
         url_hashes = get_url_hashes(url_list)
         url = zip(url_list, url_hashes)
         story_fnames = ["/home/hmwv1114/workdisk/workspace/cnn_dm_stories/cnn_stories_tokenized/" + s + ".story"
-                        if u.find('cnn.com') >= 0 else "/home/hmwv1114/workdisk/workspace/cnn_dm_stories/dm_stories_tokenized/" + s + ".story"
+                        if u.find(
+            'cnn.com') >= 0 else "/home/hmwv1114/workdisk/workspace/cnn_dm_stories/dm_stories_tokenized/" + s + ".story"
                         for u, s in url]
 
         new_lines = []
@@ -310,7 +309,7 @@ def main():
             try:
                 art, abs = get_art_abs(filename)
             except:
-                print filename
+                print(filename)
                 continue
             new_lines.append(Document(art, abs))
 
