@@ -63,7 +63,8 @@ After PyTorch is installed, you do the followings
         │   │   ├── val_000.bin
         │   │   ├── ...
         │   │   └── val_287.bin
-        │   └── vocab_100d.txt
+        │   ├── vocab_100d.txt
+        |   └── vocab
         └── url_lists
                 ├── all_test.txt
                 ├── all_train.txt
