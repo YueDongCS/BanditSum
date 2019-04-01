@@ -106,7 +106,7 @@ class Vocab:
             return self.w2i['<unk>']
 
     def add_vocab(self, vocab_file="../data/finished_files/vocab"):
-        with open(vocab_file, "rb") as f:
+        with open(vocab_file, "r") as f:
             for line in f:
                 self.word_list.append(line.split()[0])  # only want the word, not the count
         print("read %d words from vocab file" % len(self.word_list))
