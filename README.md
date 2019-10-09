@@ -15,9 +15,9 @@ Please cite this paper if you use our code or data.
 ## New Updates:
 It was recently discovered that our model can achieve better performance than the one reported in the paper (trained with two epochs) if trained to four epochs on CNN/DailyMail:
 
-BanditSum reported in the paper: ROUGE-1 41.5  ROUGE-2 18.7  ROUGE-L 37.6
+BanditSum reported in the paper: ROUGE-1 **41.5**  ROUGE-2 **18.7**  ROUGE-L **37.6**
 
-BanditSum trained after 4 epochs: ROUGE-1 41.68  ROUGE-2 18.78  ROUGE-L 38.00
+BanditSum trained after 4 epochs: ROUGE-1 **41.68**  ROUGE-2 **18.78**  ROUGE-L **38.00**
 
 ## CNN/DailyMail Dataset
 Instructions to download our preprocessed CNN/DailyMail Dataset can be found here.
